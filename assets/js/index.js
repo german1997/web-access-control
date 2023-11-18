@@ -65,8 +65,6 @@ qrcode.callback = async (respuesta) => {
   const searchParams = new URLSearchParams(url.search);
   const rut = searchParams.get('RUN')
 
-  console.log('caca', rut)
-
   // Solicitud GET (Request).
   const response = await fetch('https://app-access-control-production.up.railway.app/user/'+rut);
 
