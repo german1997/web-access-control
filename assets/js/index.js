@@ -40,7 +40,7 @@ function scan() {
   try {
     qrcode.decode();
   } catch (e) {
-    setTimeout(scan, 10);
+    setTimeout(scan, 100);
   }
 }
 
