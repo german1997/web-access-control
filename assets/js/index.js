@@ -59,15 +59,29 @@ const activarSonido = () => {
 }
 
 //callback cuando termina de leer el codigo QR
-qrcode.callback = (respuesta) => {
-  if (respuesta) {
-    //console.log(respuesta);
-    Swal.fire(respuesta)
-    activarSonido();
-    //encenderCamara();    
-    cerrarCamara();    
+qrcode.callback = async (respuesta) => {
 
+  const url = new URL(respuesta)
+  const searchParams = new URLSearchParams(url.search);
+  const rut = searchParams.get('RUN')
+
+  console.log('caca', rut)
+
+  // Solicitud GET (Request).
+  const response = await fetch('https://app-access-control-production.up.railway.app/user/'+rut);
+
+  if (response.status == 500) {
+    Swal.fire("Error interno");
   }
+
+  if (response.status == 204) {
+    Swal.fire("Usuario NO se encuentra registrado");
+  }
+
+  if (response.status == 200) {
+    Swal.fire("Usuario Registrado");
+  }
+
 };
 //evento para mostrar la camara sin el boton 
 window.addEventListener('load', (e) => {
