@@ -75,7 +75,6 @@ qrcode.callback = async (respuesta) => {
   }
 
   if (response.status == 204) {
-    Swal.fire("Usuario NO se encuentra registrado");
     Swal.fire({
       title: "Usuario NO registrado",
       icon: "error"
