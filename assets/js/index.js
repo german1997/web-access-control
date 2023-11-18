@@ -76,10 +76,23 @@ qrcode.callback = async (respuesta) => {
 
   if (response.status == 204) {
     Swal.fire("Usuario NO se encuentra registrado");
+    Swal.fire({
+      title: "Usuario NO registrado",
+      icon: "error"
+    });
+    activarSonido();
+    //encenderCamara();    
+    cerrarCamara(); 
   }
 
   if (response.status == 200) {
-    Swal.fire("Usuario Registrado");
+    Swal.fire({
+      title: "Usuario registrado",
+      icon: "success"
+    });
+    activarSonido();
+    //encenderCamara();    
+    cerrarCamara(); 
   }
 
 };
