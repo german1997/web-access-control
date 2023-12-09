@@ -4,22 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="assets/plugins/qrCode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
+<style>
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  }
+
+</style>
 <body>
-  <div class="row justify-content-center mt-5">
-    <div class="col-sm-4 shadow p-3">
-      <h5 class="text-center">Control de acceso</h5>
+  <div style="margin-top: 3%;">
+    <img src="assets/foto.png" alt="" class="center">
+    <h2 class="display-5" style="text-align: center;">
+      Iko Matsushima Chile
+    </h1>
+  </div>
+  <div class="row justify-content-center mt-3">
+    <div class="col-sm-4 p-4">
       <div class="row text-center">
         <a id="btn-scan-qr" href="#">
           <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg" class="img-fluid text-center" width="175">
         <a/>
-        <canvas hidden="" id="qr-canvas" class="img-fluid"></canvas>
+        <canvas style="border: 1px solid;" hidden="" id="qr-canvas" class="img-fluid"></canvas>
         </div>
         <div class="row mx-5 my-3">
-        <button class="btn btn-success btn-sm rounded-3 mb-2" onclick="encenderCamara()">Volver a escanear</button>
+          <button class="btn btn-success btn-sm rounded-3 mb-2" onclick="encenderCamara()">SCAN</button>
+
         <!--<button class="btn btn-danger btn-sm rounded-3" onclick="cerrarCamara()">Detener camara</button> -->
       </div>
     </div>
